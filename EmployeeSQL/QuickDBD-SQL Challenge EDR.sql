@@ -10,12 +10,9 @@ CREATE TABLE Departments(
     dept_no varchar PRIMARY KEY NOT NULL,
     dept_name varchar NOT NULL
 );
---view Deparments table
-SELECT * FROM Departments
-
 --Insert data into Departments table
 
---View the Deparments table data
+--Check data import/View the Deparments table data
 SELECT * FROM Departments
 
 --Drop table if table exists
@@ -29,7 +26,7 @@ CREATE TABLE Department_Employees(
 
 --Insert data into Department_Employees table
 
---View the Department_Employees table data
+--Check data import/View the Department_Employees table data
 SELECT * FROM Department_Employees
 
 --Drop Department_Managers table if table exists
@@ -43,7 +40,7 @@ CREATE TABLE Department_Managers(
 
 --Insert data into Department_Managers table
 
---View the Department_Managers table data
+--Check data import/View the Department_Managers table data
 SELECT * FROM Department_Managers
 
 --Drop  Employees table if table exists
@@ -62,7 +59,7 @@ CREATE TABLE Employees(
 
 --Insert data into Employees table
 
---View the Employees table data
+--Check data import/View the Employees table data
 SELECT * FROM Employees
 
 --Drop table if table exists
@@ -73,7 +70,7 @@ CREATE TABLE Salaries(
     emp_no int NOT NULL,
     salary int NOT NULL
 );
---View the Salaries table data
+--Check data import/View the Salaries table data
 SELECT * FROM Salaries
 
 --Drop table if table exists
@@ -87,7 +84,7 @@ CREATE TABLE Title(
 
 --Insert data into Title table
 
---View the Title table data
+--Check data import/View the Title table data
 SELECT * FROM Title
 
 --DATA ANALYSIS
@@ -99,11 +96,22 @@ FROM Employees AS e
 INNER JOIN Salaries AS s
 ON e.emp_no = s.emp_no;
 
+
 --List first name, last name, and hire date for employees who were hired in 1986.
+SELECT first_name, last_name, hire_date
+FROM Employees 
+WHERE hire_date LIKE '1986%';
 
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
+--Perform Inner Join on Departments, Department Managers,and Employees tables
+SELECT d.dept_no, d.dept_name,dm.emp_no, e.last_name , e.first_name
+FROM Departments AS d
+INNER JOIN Department_Managers AS dm
+ON d.dept_no = dm.dept_no
+INNER JOIN Employees AS e
+ON dm.emp_no = e.emp_no;
 
 --List the department of each employee with the following information: employee number, last name, first name, and department name.
 
