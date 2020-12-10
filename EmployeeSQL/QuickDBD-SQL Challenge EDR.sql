@@ -102,8 +102,7 @@ ON e.emp_no = s.emp_no;
 --List first name, last name, and hire date for employees who were hired in 1986.
 SELECT first_name, last_name, hire_date
 FROM Employees 
-WHERE hire_date LIKE '1986%';
-
+WHERE hire_date between '1986-01-01' and '1986-12-31'
 
 --List the manager of each department with the following information: department number, department name, the manager's employee number, last name, first name.
 
@@ -152,5 +151,3 @@ SELECT last_name, COUNT(last_name) AS "last name count"
 FROM Employees
 GROUP BY last_name
 ORDER BY "last name count" DESC;
-
-
