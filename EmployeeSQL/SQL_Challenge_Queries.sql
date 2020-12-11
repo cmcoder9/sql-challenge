@@ -1,4 +1,5 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
+﻿-- Open ERD_schema to use as skeleton for query code
+-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
 -- Link to schema: Link to schema: https://app.quickdatabasediagrams.com/#/d/2WoygX
 
 --DATA ENGINEERING
